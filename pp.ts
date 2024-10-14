@@ -1,8 +1,8 @@
 var Canvas: HTMLElement | null = document.getElementById("canvas") as HTMLCanvasElement
 var canvas: HTMLCanvasElement = Canvas as HTMLCanvasElement;
 
-var Context: CanvasRenderingContext2D = canvas.getContext("2d") as CanvasRenderingContext2D
-
+var Context: CanvasRenderingContext2D  = canvas.getContext("2d") as CanvasRenderingContext2D
+Context.save();
 function DrawSqure(): void {
     // Set the fill color to blue
     Context.fillStyle = 'blue';
@@ -36,5 +36,10 @@ function TranslateY() {
 }
 function TranslateXY() {
     Context.translate(50, 50);
+}
 
+function Clear() {
+    Context.restore();
+    Context.clearRect(0, 0, Context.canvas.width, Context.canvas.height);
+       
 }

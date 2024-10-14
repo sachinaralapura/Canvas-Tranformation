@@ -1,8 +1,11 @@
 var Canvas = document.getElementById("canvas");
 var canvas = Canvas;
 var Context = canvas.getContext("2d");
+Context.save();
 function DrawSqure() {
+    // Set the fill color to blue
     Context.fillStyle = 'blue';
+    // Draw the square
     Context.fillRect(50, 50, 100, 100);
 }
 function ScaleUp() {
@@ -25,4 +28,8 @@ function TranslateY() {
 }
 function TranslateXY() {
     Context.translate(50, 50);
+}
+function Clear() {
+    Context.restore();
+    Context.clearRect(0, 0, Context.canvas.width, Context.canvas.height);
 }
